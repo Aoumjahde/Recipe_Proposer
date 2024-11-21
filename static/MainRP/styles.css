@@ -1,106 +1,195 @@
-/* General Body Styling */
+/* Color Variables */
+:root {
+    --primary-color: #FFDAB9;       /* Peach */
+    --secondary-color: #F08080;     /* Light Coral */
+    --accent-color: #FFA07A;        /* Light Salmon */
+    --background-color: #FFF5EE;    /* Seashell */
+    --text-color: #5A4A42;          /* Warm Brown */
+    --input-bg-color: #FFFFF0;      /* Ivory */
+    --input-border-color: #FFDAB9;  /* Peach */
+    --button-hover-color: #F4978E;  /* Pastel Red */
+}
+
+/* Global Styles */
 body {
-    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #FFFAF0; /* Light cream background */
-    color: #333;
+    text-align: center;  /* Center all text content */
+}
+
+a {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Header */
+header {
+    background-color: var(--primary-color);
+    padding: 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    text-align: center;  /* Center the title */
+}
+
+/* Navigation */
+nav {
+    background-color: var(--primary-color);
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style: none;
     display: flex;
     justify-content: center;
-    align-items: center;
-    min-height: 100vh; /* Center content vertically */
+    margin: 0;
+    padding: 0;
 }
 
-/* Centered Form Container */
-.container {
-    width: 80%; /* Responsive width relative to the viewport */
-    max-width: 60%; /* Restrict the form's width to 60% of the screen */
-    background-color: #FFF8E1; /* Pastel yellow background */
-    padding: 5%; /* Relative padding */
-    border-radius: 1%; /* Rounded corners */
-    box-shadow: 0 2% 4% rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    text-align: center; /* Center align all text inside */
+nav li {
+    margin: 0 15px;
 }
 
-/* Header Styling */
-h1 {
-    font-size: 2.5vw; /* Adjust header size relative to the viewport width */
+nav a {
+    color: var(--text-color);
     font-weight: bold;
-    color: #333;
-    margin-bottom: 2%; /* Relative margin for spacing */
-    margin-right: 2%;
+    transition: color 0.3s;
 }
 
-/* Form Styling */
+nav a:hover {
+    color: var(--accent-color);
+}
+
+/* Main Content */
+main {
+    padding: 20px;
+}
+
+/* Buttons */
+button, .button {
+    background-color: var(--accent-color);
+    border: none;
+    color: white;
+    padding: 12px 25px;
+    margin: 10px 0;
+    font-size: 1em;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    width: 80%;  /* Adjust button width for mobile */
+}
+
+button:hover, .button:hover {
+    background-color: var(--button-hover-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Forms */
 form {
-    display: flex;
-    flex-direction: column;
-    gap: 3%; /* Relative gap between form elements */
+    max-width: 400px;
+    margin: 0 auto;
 }
 
 form label {
-    font-weight: bold;
-    font-size: 1.2vw; /* Label size relative to viewport width */
-    color: #555;
-    text-align: left; /* Align labels to the left */
-    margin-bottom: 1%; /* Relative spacing below labels */
+    position: relative;
+    display: block;
+    margin-bottom: 25px;
+    text-align: left;  /* Left-align labels */
 }
 
-form input, form textarea, form button {
-    font-family: 'Poppins', sans-serif;
-    padding: 2%; /* Relative padding for form elements */
-    border: 0.1vw solid #ddd; /* Border size relative to viewport */
-    border-radius: 0.5%; /* Rounded corners */
-    font-size: 1.2vw; /* Font size relative to viewport width */
-    width: 100%; /* Full width of the container */
-    box-sizing: border-box;
-}
-
-/* Textarea Styling */
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
 form textarea {
-    resize: vertical;
-    min-height: 15%; /* Minimum height relative to container size */
+    width: 100%;
+    padding: 15px 20px;
+    border: 1px solid var(--input-border-color);
+    border-radius: 30px;
+    background-color: var(--input-bg-color);
+    font-size: 1em;
+    color: var(--text-color);
+    transition: border-color 0.3s, box-shadow 0.3s;
 }
 
-/* Button Styling */
-form button {
-    background-color: #FFB3B3; /* Pastel pink */
-    color: white;
-    border: none;
-    cursor: pointer;
-    font-weight: bold;
-    font-size: 1.2vw; /* Button font size relative to viewport */
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    padding: 2%; /* Relative padding */
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form input[type="password"]:focus,
+form textarea:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 10px rgba(255, 160, 122, 0.5);
+    outline: none;
 }
 
-form button:hover {
-    background-color: #FF9999; /* Slightly darker pink on hover */
-    transform: scale(1.03); /* Slight hover effect */
+/* Floating Labels */
+form input[type="text"] + span,
+form input[type="email"] + span,
+form input[type="password"] + span,
+form textarea + span {
+    position: absolute;
+    left: 20px;
+    top: 15px;
+    color: #aaa;
+    font-size: 1em;
+    transition: all 0.2s;
+    pointer-events: none;
 }
 
-/* Footer Styling */
+form input[type="text"]:focus + span,
+form input[type="email"]:focus + span,
+form input[type="password"]:focus + span,
+form textarea:focus + span,
+form input[type="text"]:valid + span,
+form input[type="email"]:valid + span,
+form input[type="password"]:valid + span,
+form textarea:valid + span {
+    top: -10px;
+    left: 15px;
+    font-size: 0.8em;
+    color: var(--accent-color);
+}
+
+/* Cards */
+.card {
+    background-color: white;
+    border-radius: 15px;
+    padding: 25px;
+    margin: 20px auto;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    max-width: 90%;
+}
+
+/* Footer */
 footer {
+    background-color: var(--primary-color);
     text-align: center;
-    padding: 2%; /* Relative padding */
-    background-color: #FFE6E6; /* Light pastel red */
-    color: #555;
-    font-size: 1vw; /* Footer font size relative to viewport width */
-    margin-top: 3%; /* Relative spacing above footer */
+    padding: 15px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    color: var(--text-color);
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .container {
-        padding: 7%;
-        max-width: 90%; /* Expand container width for smaller screens */
+    nav ul {
+        flex-direction: column;
     }
 
-    h1 {
-        font-size: 4vw; /* Increase header size for readability */
+    button, .button {
+        width: 90%;
     }
 
-    form button {
-        font-size: 3vw; /* Adjust button font size */
+    form {
+        width: 90%;
     }
 }
