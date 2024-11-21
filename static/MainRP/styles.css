@@ -1,0 +1,106 @@
+/* General Body Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #FFFAF0; /* Light cream background */
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Center content vertically */
+}
+
+/* Centered Form Container */
+.container {
+    width: 80%; /* Responsive width relative to the viewport */
+    max-width: 60%; /* Restrict the form's width to 60% of the screen */
+    background-color: #FFF8E1; /* Pastel yellow background */
+    padding: 5%; /* Relative padding */
+    border-radius: 1%; /* Rounded corners */
+    box-shadow: 0 2% 4% rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    text-align: center; /* Center align all text inside */
+}
+
+/* Header Styling */
+h1 {
+    font-size: 2.5vw; /* Adjust header size relative to the viewport width */
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 2%; /* Relative margin for spacing */
+    margin-right: 2%;
+}
+
+/* Form Styling */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 3%; /* Relative gap between form elements */
+}
+
+form label {
+    font-weight: bold;
+    font-size: 1.2vw; /* Label size relative to viewport width */
+    color: #555;
+    text-align: left; /* Align labels to the left */
+    margin-bottom: 1%; /* Relative spacing below labels */
+}
+
+form input, form textarea, form button {
+    font-family: 'Poppins', sans-serif;
+    padding: 2%; /* Relative padding for form elements */
+    border: 0.1vw solid #ddd; /* Border size relative to viewport */
+    border-radius: 0.5%; /* Rounded corners */
+    font-size: 1.2vw; /* Font size relative to viewport width */
+    width: 100%; /* Full width of the container */
+    box-sizing: border-box;
+}
+
+/* Textarea Styling */
+form textarea {
+    resize: vertical;
+    min-height: 15%; /* Minimum height relative to container size */
+}
+
+/* Button Styling */
+form button {
+    background-color: #FFB3B3; /* Pastel pink */
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.2vw; /* Button font size relative to viewport */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    padding: 2%; /* Relative padding */
+}
+
+form button:hover {
+    background-color: #FF9999; /* Slightly darker pink on hover */
+    transform: scale(1.03); /* Slight hover effect */
+}
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    padding: 2%; /* Relative padding */
+    background-color: #FFE6E6; /* Light pastel red */
+    color: #555;
+    font-size: 1vw; /* Footer font size relative to viewport width */
+    margin-top: 3%; /* Relative spacing above footer */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 7%;
+        max-width: 90%; /* Expand container width for smaller screens */
+    }
+
+    h1 {
+        font-size: 4vw; /* Increase header size for readability */
+    }
+
+    form button {
+        font-size: 3vw; /* Adjust button font size */
+    }
+}
