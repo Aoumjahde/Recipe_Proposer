@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% load static %}
+    <title>Recipe Display</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'MainRP/styles.css' %}">
+</head>
+<body>
+    <h1>Your Recipe</h1>
+    <p style="margin: 50px auto; padding: 20px; max-width: 600px; text-align: center;">
+        {{ recipe_paragraph }}
+    </p>
+</body>
+</html>
